@@ -143,11 +143,6 @@ def main():
             loop = False
         index += 1 
         index = index % 3
-    
-
-    input_one = ["Althea Farrel", "Darlena Cone", "Gerard Ta", "Deja Denner", "Kanisha Kimrey", "Piper Barraza", "Kathey Cotner", "Coleman Wolfe", "Marge Hudgins", "Rosalie Wilt"]
-    input_two = ["Althea Farrel", "Darlena Cone", "Gerard Ta", "Deja Denner", "Kanisha Kimrey", "Piper Barraza", "Kathey Cotner", "Shayne Vessels", "Nona Moles", "Socorro Vandenberg"]
-    input_three = ["Althea Farrel", "Darlena Cone", "Gerard Ta", "Deja Denner", "Kanisha Kimrey", "Piper Barraza", "Cletus Mair", "Coleman Wolfe", "Marge Hudgins", "Rosalie Wilt"]
 
 if __name__ == "__main__":
     main()
