@@ -112,20 +112,42 @@ def create_pairs(people):
 
     return final_pairs
 
+def printPairs(pairArray):
+    for pairing in pairArray:
+        print(pairing[0] + " + " + pairing[1])
+
 def main():
     '''
-    creating a test case and calling the assign partners function for 3 months of data
+    allowing user to create groups to partner or creating a test case
     '''
-    jan_input = ["Althea Farrel", "Darlena Cone", "Gerard Ta", "Deja Denner", "Kanisha Kimrey", "Piper Barraza", "Kathey Cotner", "Coleman Wolfe", "Marge Hudgins", "Rosalie Wilt"]
-    feb_input = ["Althea Farrel", "Darlena Cone", "Gerard Ta", "Deja Denner", "Kanisha Kimrey", "Piper Barraza", "Kathey Cotner", "Shayne Vessels", "Nona Moles", "Socorro Vandenberg"]
-    mar_input = ["Althea Farrel", "Darlena Cone", "Gerard Ta", "Deja Denner", "Kanisha Kimrey", "Piper Barraza", "Cletus Mair", "Coleman Wolfe", "Marge Hudgins", "Rosalie Wilt"]
 
-    print(create_pairs(jan_input))
-    print("----------------------")
-    print(create_pairs(feb_input))
-    print("----------------------")
-    print(create_pairs(mar_input))
-    print("----------------------")
+    input_one = ["Althea Farrel", "Darlena Cone", "Gerard Ta", "Deja Denner", "Kanisha Kimrey", "Piper Barraza", "Kathey Cotner", "Coleman Wolfe", "Marge Hudgins", "Rosalie Wilt"]
+    input_two = ["Althea Farrel", "Darlena Cone", "Gerard Ta", "Deja Denner", "Kanisha Kimrey", "Piper Barraza", "Kathey Cotner", "Shayne Vessels", "Nona Moles", "Socorro Vandenberg"]
+    input_three = ["Althea Farrel", "Darlena Cone", "Gerard Ta", "Deja Denner", "Kanisha Kimrey", "Piper Barraza", "Cletus Mair", "Coleman Wolfe", "Marge Hudgins", "Rosalie Wilt"]
+
+    examples = [input_one, input_two, input_three]
+    index = 0
+
+    loop = True
+    while loop:
+        user_input = input("Enter the names of people that you want grouped in this round (first and last name), seperated by a comma and a space, or type \"test\" to use a test sample: \n")
+        input_array = []
+        if user_input == "test":
+            input_array = examples[index]
+        else:
+            input_array = user_input.split(", ")
+        
+        printPairs(create_pairs(input_array))
+        wait = input("To do another round, type \"Y\". To quit, type \"N\".\n")
+        if wait == "N":
+            loop = False
+        index += 1 
+        index = index % 3
+    
+
+    input_one = ["Althea Farrel", "Darlena Cone", "Gerard Ta", "Deja Denner", "Kanisha Kimrey", "Piper Barraza", "Kathey Cotner", "Coleman Wolfe", "Marge Hudgins", "Rosalie Wilt"]
+    input_two = ["Althea Farrel", "Darlena Cone", "Gerard Ta", "Deja Denner", "Kanisha Kimrey", "Piper Barraza", "Kathey Cotner", "Shayne Vessels", "Nona Moles", "Socorro Vandenberg"]
+    input_three = ["Althea Farrel", "Darlena Cone", "Gerard Ta", "Deja Denner", "Kanisha Kimrey", "Piper Barraza", "Cletus Mair", "Coleman Wolfe", "Marge Hudgins", "Rosalie Wilt"]
 
 if __name__ == "__main__":
     main()
